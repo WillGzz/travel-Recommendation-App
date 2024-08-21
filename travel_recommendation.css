@@ -1,31 +1,38 @@
+/* Mobile First Design */
+html{
+    height: 100%;
+}
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
+body{
+    color: white;
+    background-image: url("/travel-Recommendation-App/Images/nyc.png");
+    background-size: cover; /* Ensures the image covers the entire page */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center center; /* Centers the image */
+}
 nav {
     background-color: rgb(33, 26, 26);
-    color: white;
-    padding: 20px;
+    padding: 10px;
     display: flex;
     align-items: center;
-   
- 
+    justify-content: space-between;
 }
 
-nav a,
-nav h1,
-nav button,
-nav input {
-    
-    justify-content: space-around;
-} 
+nav h1 {
+    font-size: 1.2rem;
+    margin-left: 0.1em;
+}
+
 
 nav a {
-    
+
     text-decoration: none;
-    color: white;
+    visibility: hidden;
+    display: none;
 
 }
 
@@ -33,8 +40,61 @@ nav a:hover {
     text-decoration: underline;
 }
 
-nav input,
-nav button {
-    justify-content:flex-end;
-    margin-right: 20px;
+
+nav input {
+    background-color: white;
+    padding: 10px;
+    width: 156px;
+    border-radius: 20px;
+    margin-left: 30px;
+    height: 25px
+}
+
+nav input::placeholder {
+    color: rgb(2, 112, 129);
+    font-size: 8px;
+    
+}
+
+#menu-icon {
+    position: relative;
+    height: 23px;
+    width: auto;
+    right: 4px;
+    bottom: 3px;
+}
+
+#search-icon {
+    height: 15px;
+    width: auto;
+    position: relative;
+    right: 22px;
+    bottom: 2px;
+}
+
+.search-clear button {
+    font-size: 10px;
+    position: relative;
+    left: 21px;
+    color: white;
+    background-color: rgb(2, 112, 129);
+    border: none;
+    border-radius: 10px;
+    padding: 5px 15px;
+}
+
+.search-clear {
+    position: relative;
+    float: inline-end;
+    margin-right: 25px;
+    background-color: rgb(33, 26, 26);
+    height: 30px;
+    width: 160px;
+    border-radius: 20px;
+    right: 20px;
+
+}
+
+.Introduction {
+    margin-top: 50px;
 }
