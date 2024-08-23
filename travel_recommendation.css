@@ -1,6 +1,7 @@
 /* Mobile First Design */
-html{
-    height: 100%;
+html, body{
+   height: 100%;
+
 }
 * {
     margin: 0;
@@ -9,10 +10,7 @@ html{
 }
 body{
     color: white;
-    background-image: url("/travel-Recommendation-App/Images/nyc.png");
-    background-size: cover; /* Ensures the image covers the entire page */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    background-position: center center; /* Centers the image */
+  
 }
 nav {
     background-color: rgb(33, 26, 26);
@@ -93,6 +91,17 @@ nav input::placeholder {
     border-radius: 20px;
     right: 20px;
 
+}
+#background-img{
+    background-image: url("/travel-Recommendation-App/Images/nyc.png");
+    position: relative;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh; /* Use viewport height */
+    width: 100vw;  /* Use viewport width */
+    
 }
 
 .Introduction {
