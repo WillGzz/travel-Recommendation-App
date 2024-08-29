@@ -10,6 +10,7 @@ html, body{
 }
 body{
     color: rgb(255, 255, 255);
+    
   
 }
 nav {
@@ -26,17 +27,39 @@ nav h1 {
 }
 
 #nav-background{
-    color: black;
-    background-color: black;
-    z-index: 2 !important;
+  position: relative;
+  background-color: green;
+  height: 100px;
+  width: auto;
+  transition: background-color 0.2s;
+  z-index: 2 !important;
+  
+}
+#nav-background.active{
+  position: relative;
+  background-color:  rgba(2, 112, 129, 0.7);
+  height: 100px;
+  width: auto;
+  
 }
 
+
+/* continue tomorrow */
 nav a {
 
     text-decoration: none;
     display: none;
 
 }
+
+nav a.active {
+    position: relative;
+    top: 400px;
+    text-decoration: none;
+    
+
+}
+
 
 nav a:hover {
     text-decoration: underline;
@@ -58,13 +81,22 @@ nav input::placeholder {
     
 }
 
-#menu-icon {
+#menu-icon{
     position: relative;
     height: 23px;
     width: auto;
     right: 4px;
     bottom: 3px;
     cursor: pointer;
+}
+
+#close-icon{
+    position: relative;
+    height: 23px;
+    width: auto;
+    right: 4px;
+    cursor: pointer;
+    display: none;
 }
 
 #search-icon {
