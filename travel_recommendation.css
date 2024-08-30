@@ -19,46 +19,42 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
+} 
+
+nav.active {
+
+    background-color: rgb(22, 126, 142);
+    height: 100%;
+    
+} 
 
 nav h1 {
     font-size: 1.2rem;
     margin-left: 0.1em;
 }
 
-#nav-background{
-  position: relative;
-  background-color: green;
-  height: 100px;
-  width: auto;
-  transition: background-color 0.2s;
-  z-index: 2 !important;
-  
-}
-#nav-background.active{
-  position: relative;
-  background-color:  rgba(2, 112, 129, 0.7);
-  height: 100px;
-  width: auto;
-  
-}
 
-
-/* continue tomorrow */
-nav a {
+  nav a {
 
     text-decoration: none;
     display: none;
+  
+} 
 
-}
-
-nav a.active {
+nav.active a.active {
     position: relative;
-    top: 400px;
+    font-size: 1.1rem;
+    top: 100px;
+    display: block;
     text-decoration: none;
-    
+    cursor: pointer;
+    text-align: center;
+    margin-bottom: 30px ;
+    color: white;
 
-}
+} 
+
+
 
 
 nav a:hover {
@@ -90,13 +86,20 @@ nav input::placeholder {
     cursor: pointer;
 }
 
+
 #close-icon{
-    position: relative;
-    height: 23px;
-    width: auto;
-    right: 4px;
-    cursor: pointer;
     display: none;
+}
+
+#close-icon.active {
+    position: relative;
+    height: 28px;
+    width: auto;
+    float: inline-end;
+    cursor: pointer;
+    bottom: 140px;
+    right: 15px;
+      
 }
 
 #search-icon {
@@ -148,8 +151,9 @@ nav input::placeholder {
     top: 45px;
     left: 0;
     width: 100%;
-    height: 95%;
-    background: linear-gradient(to right, rgba(2, 112, 129, 0.7), rgba(2, 112, 129, 0));
+    height: 95%; 
+    background: var(--before-background, linear-gradient(to right, rgba(2, 112, 129, 0.7), rgba(2, 112, 129, 0)));
+    /*  using custom properties (CSS variables)  */
 
 }
 
