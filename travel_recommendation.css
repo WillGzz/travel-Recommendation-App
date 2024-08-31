@@ -13,7 +13,7 @@ body{
     
   
 }
-nav {
+.nav {
     background-color: rgb(33, 26, 26);
     padding: 10px;
     display: flex;
@@ -21,8 +21,8 @@ nav {
     justify-content: space-between;
 } 
 
-nav.active {
-
+.nav2 {  
+                                  
     background-color: rgb(22, 126, 142);
     height: 100%;
     
@@ -41,7 +41,7 @@ nav h1 {
   
 } 
 
-nav.active a.active {
+nav  a.active {
     position: relative;
     font-size: 1.1rem;
     top: 100px;
@@ -53,8 +53,6 @@ nav.active a.active {
     color: white;
 
 } 
-
-
 
 
 nav a:hover {
@@ -84,11 +82,12 @@ nav input::placeholder {
     right: 4px;
     bottom: 3px;
     cursor: pointer;
+    /* fix the transition between menu and close */
 }
 
 
-#close-icon{
-    display: none;
+#close-icon{    /*Keep in mind that the styles defined for the :active state are applied on top of the existing styles for the HTML element. */
+    display: none;    /* The styles from the active state also have higher precedence over the regular styles */
 }
 
 #close-icon.active {
@@ -99,6 +98,7 @@ nav input::placeholder {
     cursor: pointer;
     bottom: 140px;
     right: 15px;
+    transition: ease 0.4s;
       
 }
 
