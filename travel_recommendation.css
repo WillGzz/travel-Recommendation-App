@@ -19,13 +19,18 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
+   
+    /*  specifies a transition effect with a slow start and end */
+  
 } 
 
 .nav2 {  
                                   
     background-color: rgb(22, 126, 142);
     height: 100%;
+    transition: all 0.7s ease-in-out;
     
+  
 } 
 
 nav h1 {
@@ -35,10 +40,11 @@ nav h1 {
 
 
   nav a {
-
+   
     text-decoration: none;
     display: none;
-  
+    
+
 } 
 
 nav  a.active {
@@ -51,6 +57,7 @@ nav  a.active {
     text-align: center;
     margin-bottom: 30px ;
     color: white;
+
 
 } 
 
@@ -82,7 +89,7 @@ nav input::placeholder {
     right: 4px;
     bottom: 3px;
     cursor: pointer;
-    /* fix the transition between menu and close */
+  
 }
 
 
@@ -98,7 +105,7 @@ nav input::placeholder {
     cursor: pointer;
     bottom: 140px;
     right: 15px;
-    transition: ease 0.4s;
+   
       
 }
 
@@ -154,7 +161,7 @@ nav input::placeholder {
     height: 95%; 
     background: var(--before-background, linear-gradient(to right, rgba(2, 112, 129, 0.7), rgba(2, 112, 129, 0)));
     /*  using custom properties (CSS variables)  */
-
+    
 }
 
 .Introduction {
@@ -189,6 +196,7 @@ font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
     font-size: 0.7rem;
     font-weight: bold;
     padding: 5px 15px;
+    cursor: pointer;
 }
 
 .Introduction h1, .Introduction p, .Introduction button{
