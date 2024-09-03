@@ -8,6 +8,7 @@ const anchor = document.querySelectorAll('a');
 const intro = document.getElementsByClassName('Introduction');
 const backgroundImg = document.getElementById('background-img');
 
+const search = document.getElementById('input').value
 
 
 menu.addEventListener('click', function() {
@@ -52,5 +53,14 @@ closeIcon.addEventListener('click', function() {
    
 });
 
+function search(){
+  fetch('travel_recommendation_api.json')  //perform get request
+    .then(response => response.json()) //the first .then method handles the resolved promise and parses the data we were waiting for as javascript object
+    .then(data => {   //the second .then method allow us to manipulate the data we recieved 
+
+
+    })
+
+}
 
 
