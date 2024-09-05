@@ -8,6 +8,10 @@ const anchor = document.querySelectorAll('a');
 const intro = document.getElementsByClassName('Introduction');
 const backgroundImg = document.getElementById('background-img');
 
+const searchDiv = document.getElementsByClassName('search-clear')[0]; //a collection of elements are returned so
+// you need to access the first element in that collection before accessing its children.
+const searchBtn =  searchDiv.children[0]; //acess the first button
+
 
 menu.addEventListener('click', function() {
     menu.style.display = 'none';
@@ -53,18 +57,18 @@ closeIcon.addEventListener('click', function() {
 
 function search(){
 const result = document.getElementById('search-result');
-const userInput = document.getElementById('input').value.tolowercase();
+const userInput = document.getElementById('input').value.toLowerCase();
 fetch('travel_recommendation_api.json')  //perform get request
     .then(response => response.json()) //the first .then method handles the resolved promise and parses the data we were waiting for as javascript object
-    console.log(response.json())
     .then(data => {   //the second .then method allow us to manipulate the data we recieved 
-    getCountries(data);
+      // console.log(data);
+      getCountries(data, userInput, result);
   })
 
-  .error(error =>{
+  .catch(error =>{
    console.error('Error: ', error);
    result.innerHTML = 
-   `<div id = "error"> 
+   `<div id="error"> 
      <h2>Unable to retrieve information...</h2> 
      <h3>Please use the following keywords:</h3>
      <ul>
@@ -77,22 +81,28 @@ fetch('travel_recommendation_api.json')  //perform get request
 
 }
 
-function getCountries(data){
+function getCountries(data, userInput, result){
 
     const countries = data.countries;
-    const countryName = countries.name;
-    const countryCities = countries.cities;
-
      if (userInput === countries){
-      countries.forEach((element, index) =>{
-                
-        }).join('');
+      countries.forEach((element) =>{
+              result.innerHTML += 
+              `<div> 
+              <img src=${element.cities.imageUrl} alt ="${element.cities.name}">
+               <h3>${element.cities.name}</h3>
+               <p>${element.cities.description} </p>
+               <button id="visit-button">Visit</button>
+              </div>
+              <br>`
+    }).join('');
      }
 }
-function getBeaches(data){
+// function getBeaches(data){
 
-}
+// }
 
-function getTemples(data){
+// function getTemples(data){
 
-}
+// }
+
+searchBtn.addEventListener('click', search);
