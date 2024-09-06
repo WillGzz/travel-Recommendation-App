@@ -11,6 +11,7 @@ const backgroundImg = document.getElementById('background-img');
 const searchDiv = document.getElementsByClassName('search-clear')[0]; //a collection of elements are returned so
 // you need to access the first element in that collection before accessing its children.
 const searchBtn =  searchDiv.children[0]; //acess the first button
+const clearBtn =  searchDiv.children[1]; //acess the first button
 
 
 menu.addEventListener('click', function() {
@@ -55,13 +56,15 @@ closeIcon.addEventListener('click', function() {
    
 });
 
-function search(){
 const result = document.getElementById('search-result');
-const userInput = document.getElementById('input').value.toLowerCase();
+function search(){
+let userInput = document.getElementById('input').value.toLowerCase();
+
+clear(userInput);
 fetch('travel_recommendation_api.json')  //perform get request
     .then(response => response.json()) //the first .then method handles the resolved promise and parses the data we were waiting for as javascript object
     .then(data => {   //the second .then method allow us to manipulate the data we recieved 
-      // console.log(data);
+      console.log(data);
       getCountries(data, userInput, result);
   })
 
@@ -78,23 +81,27 @@ fetch('travel_recommendation_api.json')  //perform get request
      </ul>
    </div>`
   });
-
 }
 
 function getCountries(data, userInput, result){
 
     const countries = data.countries;
-     if (userInput === countries){
-      countries.forEach((element) =>{
-              result.innerHTML += 
-              `<div> 
-              <img src=${element.cities.imageUrl} alt ="${element.cities.name}">
-               <h3>${element.cities.name}</h3>
-               <p>${element.cities.description} </p>
-               <button id="visit-button">Visit</button>
-              </div>
-              <br>`
-    }).join('');
+    // console.log(countries);
+     if (userInput === 'countries'){
+      countries.forEach((country) =>{  //we have an array of country objects
+      country.cities.forEach((city)=>{
+        result.innerHTML += 
+        `<div> 
+      <!--  <img src=${city.imageUrl} alt ="${city.name}">  -->
+         <h3>${city.name}</h3>
+         <p>${city.description} </p>
+         <button id="visit-button">Visit</button>
+        </div>
+        <br>`;
+        
+    });   
+        
+         });
      }
 }
 // function getBeaches(data){
@@ -105,4 +112,9 @@ function getCountries(data, userInput, result){
 
 // }
 
+function clear(userInput){
+  userInput = '';
+  result.innerHTML = '';
+}
 searchBtn.addEventListener('click', search);
+clearBtn.addEventListener('click', clear);

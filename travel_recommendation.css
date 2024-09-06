@@ -57,7 +57,7 @@ nav  a.active {
     text-align: center;
     margin-bottom: 30px ;
     color: white;
-
+   
 
 } 
 
@@ -138,13 +138,22 @@ nav input::placeholder {
     width: 160px;
     border-radius: 20px;
     right: 20px;;
+    
      
 }
 
  #search-result{
- float: inline-end;
- background: white;
-    
+ position: relative;
+ height: 20%;
+ width: 160px;
+ background-color: white; 
+ color: black;
+ top: 10px;
+ right: 18px;
+ float: right;
+ font-size: 15px;
+ 
+
 } 
 
 #background-img{
