@@ -58,13 +58,12 @@ closeIcon.addEventListener('click', function() {
 
 const result = document.getElementById('search-result');
 function search(){
+result.innerHTML = ""; //when theres new input provide new results, getting rid of the old
 let userInput = document.getElementById('input').value.toLowerCase();
-
-clear(userInput);
 fetch('travel_recommendation_api.json')  //perform get request
     .then(response => response.json()) //the first .then method handles the resolved promise and parses the data we were waiting for as javascript object
     .then(data => {   //the second .then method allow us to manipulate the data we recieved 
-      console.log(data);
+      // console.log(data);
       getCountries(data, userInput, result);
   })
 
@@ -73,7 +72,7 @@ fetch('travel_recommendation_api.json')  //perform get request
    result.innerHTML = 
    `<div id="error"> 
      <h2>Unable to retrieve information...</h2> 
-     <h3>Please use the following keywords:</h3>
+     <h3>Please use one of the following keywords:</h3>
      <ul>
       <li>Countries</li>
       <li>Temples</li>
@@ -81,28 +80,56 @@ fetch('travel_recommendation_api.json')  //perform get request
      </ul>
    </div>`
   });
+
+ 
 }
 
 function getCountries(data, userInput, result){
 
     const countries = data.countries;
+
+    const foundCountry = countries.find((country) => country.name.toLowerCase() === userInput);
+    if (foundCountry) {
+      foundCountry.cities.forEach((city) => {
+        result.innerHTML += `<div> 
+     <!--  <img src=${city.imageUrl} alt ="${city.name}">  -->
+        <h3>${city.name}</h3>
+        <p>${city.description} </p>
+        <button id="visit-button">Visit</button>
+       </div>
+         <br>`;
+      });
+    }
     // console.log(countries);
-     if (userInput === 'countries'){
-      countries.forEach((country) =>{  //we have an array of country objects
-      country.cities.forEach((city)=>{
-        result.innerHTML += 
-        `<div> 
+     else if (userInput === "countries") {
+      countries.forEach((country) => {
+        //we have an array of country objects
+        country.cities.forEach((city) => {
+          result.innerHTML += `<div> 
       <!--  <img src=${city.imageUrl} alt ="${city.name}">  -->
          <h3>${city.name}</h3>
          <p>${city.description} </p>
          <button id="visit-button">Visit</button>
         </div>
         <br>`;
-        
-    });   
-        
-         });
-     }
+        });
+      });
+    }
+    else{
+      result.innerHTML = 
+   `<div id="error"> 
+     <h2>Unable to retrieve information...</h2> 
+     <h3>Please use one of the following keywords:</h3>
+     <ul>
+      <li>Japan</li>
+      <li>Brazil</li>
+      <li>Australia</li>
+     </ul>
+   </div>`
+
+    }
+     
+    
 }
 // function getBeaches(data){
 
@@ -112,8 +139,9 @@ function getCountries(data, userInput, result){
 
 // }
 
-function clear(userInput){
-  userInput = '';
+function clear(){
+  // userInput = ''; to clear the input field you need to acess the element directly here you just re-assigning the variable
+  document.getElementById('input').value = '';
   result.innerHTML = '';
 }
 searchBtn.addEventListener('click', search);
