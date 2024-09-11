@@ -8,6 +8,8 @@ const anchor = document.querySelectorAll('a');
 const intro = document.getElementsByClassName('Introduction');
 const backgroundImg = document.getElementById('background-img');
 
+const searchResult = document.getElementById('search-result');
+
 const searchDiv = document.getElementsByClassName('search-clear')[0]; //a collection of elements are returned so
 // you need to access the first element in that collection before accessing its children.
 const searchBtn =  searchDiv.children[0]; //acess the first button
@@ -32,6 +34,7 @@ menu.addEventListener('click', function() {
     closeIcon.classList.add('active');
     anchor.forEach(a => a.classList.add('active')); // Add 'active' class to all anchor tags
     //classlist only works on individual elements
+    searchResult.style.display = 'none';
     
     
 });
@@ -53,7 +56,8 @@ closeIcon.addEventListener('click', function() {
     nav.classList.toggle('nav');
     closeIcon.classList.remove('active');
     anchor.forEach(a => a.classList.remove('active')); // Remove 'active' class from all anchor tags
-   
+    searchResult.style.display = "block";
+    
 });
 
 const result = document.getElementById('search-result');
@@ -124,6 +128,9 @@ function getCountries(data, userInput, result){
       <li>Japan</li>
       <li>Brazil</li>
       <li>Australia</li>
+      <li>Countries</li>
+      <li>Temples</li>
+      <li>Beaches</li>
      </ul>
    </div>`
 
@@ -144,5 +151,14 @@ function clear(){
   document.getElementById('input').value = '';
   result.innerHTML = '';
 }
+
+document.getElementById('input').focus(); // Focus the input field when the page loads
+
+document.getElementById('input').addEventListener('keydown', function(event) {
+  if (event.key === 'Enter') {
+       search();
+  }
+});
+
 searchBtn.addEventListener('click', search);
 clearBtn.addEventListener('click', clear);
