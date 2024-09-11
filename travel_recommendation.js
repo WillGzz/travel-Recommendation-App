@@ -13,7 +13,7 @@ const searchResult = document.getElementById('search-result');
 const searchDiv = document.getElementsByClassName('search-clear')[0]; //a collection of elements are returned so
 // you need to access the first element in that collection before accessing its children.
 const searchBtn =  searchDiv.children[0]; //acess the first button
-const clearBtn =  searchDiv.children[1]; //acess the first button
+const clearBtn =  searchDiv.children[1]; //acess the second button
 
 
 menu.addEventListener('click', function() {
