@@ -68,7 +68,25 @@ fetch('travel_recommendation_api.json')  //perform get request
     .then(response => response.json()) //the first .then method handles the resolved promise and parses the data we were waiting for as javascript object
     .then(data => {   //the second .then method allow us to manipulate the data we recieved 
       // console.log(data);
-      getCountries(data, userInput, result);
+    let countries =  getCountries(data, userInput, result);
+    let beaches =   getBeaches(data, userInput, result);
+    let temples =   getTemples(data, userInput, result);
+
+    if (!countries && !beaches && !temples) { //evaluates to true if no match was found for all of the inputs
+      result.innerHTML = `<div id="error"> 
+                          <h2>Unable to retrieve information...</h2> 
+                          <h3>Please use one of the following keywords:</h3>
+                          <ul>
+                          <li>USA</li>
+                          <li>Japan</li>
+                          <li>Brazil</li>
+                          <li>Australia</li>
+                          <li>Countries</li>
+                          <li>Temples</li>
+                          <li>Beaches</li>
+                          </ul>
+                        </div>`;
+    }
   })
 
   .catch(error =>{
@@ -76,12 +94,6 @@ fetch('travel_recommendation_api.json')  //perform get request
    result.innerHTML = 
    `<div id="error"> 
      <h2>Unable to retrieve information...</h2> 
-     <h3>Please use one of the following keywords:</h3>
-     <ul>
-      <li>Countries</li>
-      <li>Temples</li>
-      <li>Beaches</li>
-     </ul>
    </div>`
   });
 
@@ -91,9 +103,10 @@ fetch('travel_recommendation_api.json')  //perform get request
 function getCountries(data, userInput, result){
 
     const countries = data.countries;
-
+    let match = false;
     const foundCountry = countries.find((country) => country.name.toLowerCase() === userInput);
     if (foundCountry) {
+      match = true;
       foundCountry.cities.forEach((city) => {
         result.innerHTML += `<div> 
      <!--  <img src=${city.imageUrl} alt ="${city.name}">  -->
@@ -106,6 +119,7 @@ function getCountries(data, userInput, result){
     }
     // console.log(countries);
      else if (userInput === "countries") {
+      match = true;
       countries.forEach((country) => {
         //we have an array of country objects
         country.cities.forEach((city) => {
@@ -119,32 +133,44 @@ function getCountries(data, userInput, result){
         });
       });
     }
-    else{
-      result.innerHTML = 
-   `<div id="error"> 
-     <h2>Unable to retrieve information...</h2> 
-     <h3>Please use one of the following keywords:</h3>
-     <ul>
-      <li>Japan</li>
-      <li>Brazil</li>
-      <li>Australia</li>
-      <li>Countries</li>
-      <li>Temples</li>
-      <li>Beaches</li>
-     </ul>
-   </div>`
-
-    }
-     
-    
+      return match;
 }
-// function getBeaches(data){
+function getBeaches(data, userInput, result){
+    const beaches = data.beaches;
+    let match = false;
+    if (userInput === "beaches" || userInput === "beach") {
+      match = true;
+      beaches.forEach((beach) => {
+       
+        result.innerHTML += `<div> 
+      <!--  <img src=${beach.imageUrl} alt ="${beach.name}">  -->
+         <h3>${beach.name}</h3>
+         <p>${beach.description} </p>
+         <button id="visit-button">Visit</button>
+        </div>
+        <br>`;
+      });
+    }
+    return match;
+ }
 
-// }
-
-// function getTemples(data){
-
-// }
+function getTemples(data, userInput, result){
+   const temples = data.temples;
+   let match = false;
+   if (userInput === "temples" || userInput === "temple") {
+       match = true;
+       temples.forEach((temple) => {
+        result.innerHTML += `<div> 
+    <!--  <img src=${temple.imageUrl} alt ="${temple.name}">  -->
+       <h3>${temple.name}</h3>
+       <p>${temple.description} </p>
+       <button id="visit-button">Visit</button>
+      </div>
+      <br>`;
+    });
+  }
+  return match;
+}
 
 function clear(){
   // userInput = ''; to clear the input field you need to acess the element directly here you just re-assigning the variable
@@ -155,10 +181,10 @@ function clear(){
 document.getElementById('input').focus(); // Focus the input field when the page loads
 
 document.getElementById('input').addEventListener('keydown', function(event) {
-  if (event.key === 'Enter') {
+  if (event.key === 'Enter') {  //for mobile search
        search();
   }
 });
 
-searchBtn.addEventListener('click', search);
+searchBtn.addEventListener('click', search); //desktop search
 clearBtn.addEventListener('click', clear);
