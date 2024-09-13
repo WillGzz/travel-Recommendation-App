@@ -21,7 +21,6 @@ body{
     justify-content: space-between;
    
     /*  specifies a transition effect with a slow start and end */
-  
 } 
 
 .nav2 {  
@@ -142,17 +141,61 @@ nav input::placeholder {
 }
 
  #search-result{
+
  position: relative;
- height: 20%;
- width: 160px;
- /* background-color: white;  */
+ width: 180px;
  color: black;
  top: 10px;
- right: 18px;
- float: right;
- font-size: 15px;
+ align-items: center;
+ margin: 0 auto;
+ 
  
 } 
+/* #date{
+
+} */
+#result{
+ position: relative;
+ background-color: white;
+ z-index: 1;
+ border-radius: 10px;
+ text-wrap: wrap;
+ font-family:'Times New Roman', Times, serif;
+ 
+}
+
+#result img{
+    height: 100px;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#result button{
+    color: white;
+    background-color: rgb(2, 112, 129);
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    cursor: pointer;
+}
+#result h3{
+    margin-top: 5px;
+    font-size: 0.9rem;
+}
+
+#result p{
+    font-size: 0.7rem;
+    color: rgb(160, 160, 160);
+    
+}
+#result h3, #result p, #result button{
+ margin-left: 10px;
+ margin-bottom: 10px;
+    
+}
+
 
 #background-img{
     background-image: url("/travel-Recommendation-App/Images/nyc.png");
@@ -178,8 +221,6 @@ nav input::placeholder {
 
 .Introduction {
     margin-top: 50px;
- 
-    
 }
 
 .Introduction img{
@@ -226,5 +267,6 @@ font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
     margin-top: 10px;
     bottom: 340px;
     left: 10px;
+    cursor: pointer;
 }
 

@@ -108,8 +108,11 @@ function getCountries(data, userInput, result){
     if (foundCountry) {
       match = true;
       foundCountry.cities.forEach((city) => {
-        result.innerHTML += `<div> 
-     <!--  <img src=${city.imageUrl} alt ="${city.name}">  -->
+        result.innerHTML += 
+        `
+         <div id="date"></div>
+        <div id="result"> 
+      <img src=${city.imageUrl} alt ="${city.name}">
         <h3>${city.name}</h3>
         <p>${city.description} </p>
         <button id="visit-button">Visit</button>
@@ -123,8 +126,11 @@ function getCountries(data, userInput, result){
       countries.forEach((country) => {
         //we have an array of country objects
         country.cities.forEach((city) => {
-          result.innerHTML += `<div> 
-      <!--  <img src=${city.imageUrl} alt ="${city.name}">  -->
+          result.innerHTML += 
+          `   
+        <div id="date"></div>
+        <div id= "result"> 
+        <img src=${city.imageUrl} alt ="${city.name}">  
          <h3>${city.name}</h3>
          <p>${city.description} </p>
          <button id="visit-button">Visit</button>
@@ -142,8 +148,11 @@ function getBeaches(data, userInput, result){
       match = true;
       beaches.forEach((beach) => {
        
-        result.innerHTML += `<div> 
-      <!--  <img src=${beach.imageUrl} alt ="${beach.name}">  -->
+        result.innerHTML +=
+         `
+         <div id="date"></div>
+        <div id= "result"> 
+       <img src=${beach.imageUrl} alt ="${beach.name}"> 
          <h3>${beach.name}</h3>
          <p>${beach.description} </p>
          <button id="visit-button">Visit</button>
@@ -160,8 +169,10 @@ function getTemples(data, userInput, result){
    if (userInput === "temples" || userInput === "temple") {
        match = true;
        temples.forEach((temple) => {
-        result.innerHTML += `<div> 
-    <!--  <img src=${temple.imageUrl} alt ="${temple.name}">  -->
+        result.innerHTML += `
+          <div id="date"></div>
+        <div id= "result"> 
+    <img src=${temple.imageUrl} alt ="${temple.name}"> 
        <h3>${temple.name}</h3>
        <p>${temple.description} </p>
        <button id="visit-button">Visit</button>
