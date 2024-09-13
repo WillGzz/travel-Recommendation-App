@@ -19,6 +19,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
+   position: relative;
    
     /*  specifies a transition effect with a slow start and end */
 } 
@@ -31,10 +32,14 @@ body{
     
   
 } 
+nav #icon{
+    height: 35px;
+    width: auto;
 
+}
 nav h1 {
-    font-size: 1.2rem;
-    margin-left: 0.1em;
+    font-size: 1.1rem;
+    margin-left: 0.3em;
 }
 
 
