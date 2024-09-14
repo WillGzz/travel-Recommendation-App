@@ -1,57 +1,64 @@
 /* Mobile First Design */
-html, body{
-   height: 100%;
+html,
+body {
+    height: 100%;
+    
 
 }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     color: rgb(255, 255, 255);
-    
-  
+
+
 }
+
 .nav {
     background-color: rgb(33, 26, 26);
     padding: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-   position: relative;
-   
-    /*  specifies a transition effect with a slow start and end */
-} 
+    position: relative;
 
-.nav2 {  
-                                  
+    /*  specifies a transition effect with a slow start and end */
+}
+
+.nav2 {
+
     background-color: rgb(22, 126, 142);
     height: 100%;
     transition: all 0.7s ease-in-out;
-    
-  
-} 
-nav #icon{
+
+
+}
+
+nav #icon {
     height: 35px;
     width: auto;
 
 }
+
 nav h1 {
     font-size: 1.1rem;
     margin-left: 0.3em;
 }
 
 
-  nav a {
-   
+nav a {
+
     text-decoration: none;
     display: none;
-    
 
-} 
 
-nav  a.active {
+}
+
+nav a.active {
     position: relative;
     font-size: 1.1rem;
     top: 100px;
@@ -59,10 +66,10 @@ nav  a.active {
     text-decoration: none;
     cursor: pointer;
     text-align: center;
-    margin-bottom: 30px ;
+    margin-bottom: 30px;
     color: white;
-   
-} 
+
+}
 
 
 nav a:hover {
@@ -79,25 +86,28 @@ nav input {
     height: 25px
 }
 
-nav input::placeholder {
+nav input::placeholder {  
     color: rgb(2, 112, 129);
     font-size: 8px;
-    
-}
 
-#menu-icon{
+}
+/* style the placeholder attribute */
+
+#menu-icon {
     position: relative;
     height: 23px;
     width: auto;
     right: 4px;
     bottom: 3px;
     cursor: pointer;
-  
+
 }
 
 
-#close-icon{    /*Keep in mind that the styles defined for the :active state are applied on top of the existing styles for the HTML element. */
-    display: none;    /* The styles from the active state also have higher precedence over the regular styles */
+#close-icon {
+    /*Keep in mind that the styles defined for the :active state are applied on top of the existing styles for the HTML element. */
+    display: none;
+    /* The styles from the active state also have higher precedence over the regular styles */
 }
 
 #close-icon.active {
@@ -108,8 +118,8 @@ nav input::placeholder {
     cursor: pointer;
     bottom: 140px;
     right: 15px;
-   
-      
+
+
 }
 
 #search-icon {
@@ -140,43 +150,41 @@ nav input::placeholder {
     height: 30px;
     width: 160px;
     border-radius: 20px;
-    right: 20px;;
+    right: 20px;
     display: none;
-    
+
 }
 
- #search-result{
+#search-result {
+    
+    position: absolute;
+    width: 180px;
+    color: black;
+    top: 70px;
+    z-index: 1;
+    left: 180px;
+}
 
- position: relative;
- width: 180px;
- color: black;
- top: 10px;
- align-items: center;
- margin: 0 auto;
- 
- 
-} 
 /* #date{
 
 } */
-#result{
- position: relative;
- background-color: white;
- z-index: 1;
- border-radius: 10px;
- text-wrap: wrap;
- font-family:'Times New Roman', Times, serif;
- 
+#result {
+    position: relative;
+    background-color: white;
+    border-radius: 10px;
+    text-wrap: wrap;
+    font-family: 'Times New Roman', Times, serif;
+    
 }
 
-#result img{
+#result img {
     height: 100px;
     width: 100%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
 
-#result button{
+#result button {
     color: white;
     background-color: rgb(2, 112, 129);
     padding: 5px 10px;
@@ -185,69 +193,77 @@ nav input::placeholder {
     font-size: 0.7rem;
     cursor: pointer;
 }
-#result h3{
+
+#result h3 {
     margin-top: 5px;
     font-size: 0.9rem;
 }
 
-#result p{
+#result p {
     font-size: 0.7rem;
     color: rgb(160, 160, 160);
-    
+
 }
-#result h3, #result p, #result button{
- margin-left: 10px;
- margin-bottom: 10px;
-    
+
+#result h3,
+#result p,
+#result button {
+    margin-left: 10px;
+    margin-bottom: 10px;
+
 }
 
 
-#background-img{
+#background-img {
     background-image: url("/travel-Recommendation-App/Images/nyc.png");
     position: relative;
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh; /* Use viewport height */
+    height: 100vh;
+    /* Use viewport height */
 
 }
+
 #background-img::before {
     content: '';
-    position: absolute;
+    position: absolute;  /* Absolute positioned elements are removed from the normal flow */
     top: 45px;
     left: 0;
     width: 100%;
-    height: 95%; 
+    height: 95%;
     background: var(--before-background, linear-gradient(to right, rgba(2, 112, 129, 0.7), rgba(2, 112, 129, 0)));
     /*  using custom properties (CSS variables)  */
-    
+
 }
 
 .Introduction {
+    position: relative;
     margin-top: 50px;
+  
+
 }
 
-.Introduction img{
+.Introduction img {
     position: relative;
     height: 180px;
     width: 30px;
     display: block;
 }
 
-.Introduction h1{
-  font-size: 1.7rem;
-  
-}
-
-.Introduction p{
-font-size: 0.8rem;
-width: 60%;
-font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+.Introduction h1 {
+    font-size: 1.7rem;
 
 }
 
-.Introduction button{
+.Introduction p {
+    font-size: 0.8rem;
+    width: 60%;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', 'sans-serif';
+}
+
+.Introduction button {
     color: white;
     background-color: rgb(2, 112, 129);
     border: none;
@@ -257,14 +273,19 @@ font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
     cursor: pointer;
 }
 
-.Introduction h1, .Introduction p, .Introduction button{
+.Introduction h1,
+.Introduction p,
+.Introduction button {
     position: relative;
     margin-left: 50px;
     margin-bottom: 55px;
     bottom: 80px;
 }
 
-#X, #Instagram, #facebook, #Youtube{
+#X,
+#Instagram,
+#facebook,
+#Youtube {
     position: relative;
     display: block;
     height: 38px;
@@ -274,4 +295,3 @@ font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
     left: 10px;
     cursor: pointer;
 }
-

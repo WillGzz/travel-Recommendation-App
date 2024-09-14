@@ -59,12 +59,17 @@ closeIcon.addEventListener('click', function() {
     searchResult.style.display = "block";
     
 });
-
 const result = document.getElementById('search-result');
-function search(){
-result.innerHTML = ""; //when theres new input provide new results, getting rid of the old
-let userInput = document.getElementById('input').value.toLowerCase();
-fetch('travel_recommendation_api.json')  //perform get request
+let page = 1; // Initialize page number
+
+function search() {
+  result.innerHTML = ""; // Clear previous results
+  let userInput = document.getElementById('input').value.toLowerCase();
+  fetchResults(userInput, page);
+}
+
+function fetchResults(userInput, page) {
+  fetch(`travel_recommendation_api.json?page=${page}`) // Perform GET request with pagination
     .then(response => response.json()) //the first .then method handles the resolved promise and parses the data we were waiting for as javascript object
     .then(data => {   //the second .then method allow us to manipulate the data we recieved 
       // console.log(data);
@@ -125,7 +130,7 @@ function getCountries(data, userInput, result){
       match = true;
       countries.forEach((country) => {
         //we have an array of country objects
-        country.cities.forEach((city) => {
+        country.cities.forEach((city, index) => {
           result.innerHTML += 
           `   
         <div id="date"></div>
@@ -199,3 +204,10 @@ document.getElementById('input').addEventListener('keydown', function(event) {
 
 searchBtn.addEventListener('click', search); //desktop search
 clearBtn.addEventListener('click', clear);
+
+const loadMoreBtn = document.getElementById('load-more-btn');
+loadMoreBtn.addEventListener('click', () => {
+    let userInput = document.getElementById('input').value.toLowerCase();
+    page++;
+    fetchResults(userInput, page);
+});
