@@ -155,15 +155,12 @@ nav input::placeholder {
 }
 
 #search-result {
-    
     position: absolute;
     width: 180px;
     color: black;
     top: 70px;
     z-index: 1;
     left: 180px;
-    max-height: 50%;
-    overflow-y: auto;
 }
 
 #search-result::-webkit-scrollbar {
@@ -178,21 +175,30 @@ nav input::placeholder {
 #search-result::-webkit-scrollbar-thumb {
     background: rgba(56, 53, 53, 0.5); /* Color of the scrollbar thumb */
     border-radius: 15px; /* Rounded corners for the scrollbar thumb */;
-;
+
 }
 
 
-/* #date{
+.date{
+    display: flex;
+    height: 30px;
+    background-color: rgb(2, 112, 129);
+    border-radius: 6px;
+    margin-bottom: 7px;
+    color: white;
+    font-size: 0.649rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    text-wrap: wrap;
+}
 
-} */
 #result {
     position: relative;
     background-color: white;
     border-radius: 10px;
     text-wrap: wrap;
-    font-family: 'Times New Roman', Times, serif;
-    
-    
+    font-family: 'Times New Roman', Times, serif;   
 }
 
 #result img {
