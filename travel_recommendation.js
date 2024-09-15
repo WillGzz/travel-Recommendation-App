@@ -206,8 +206,8 @@ searchBtn.addEventListener('click', search); //desktop search
 clearBtn.addEventListener('click', clear);
 
 const loadMoreBtn = document.getElementById('load-more-btn');
-loadMoreBtn.addEventListener('click', () => {
-    let userInput = document.getElementById('input').value.toLowerCase();
-    page++;
-    fetchResults(userInput, page);
-});
+// loadMoreBtn.addEventListener('click', () => {
+//     let userInput = document.getElementById('input').value.toLowerCase();
+//     page++;
+//     fetchResults(userInput, page);
+// });

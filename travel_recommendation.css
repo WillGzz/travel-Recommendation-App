@@ -23,7 +23,6 @@ body {
     padding: 10px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     position: relative;
 
     /*  specifies a transition effect with a slow start and end */
@@ -54,7 +53,6 @@ nav a {
 
     text-decoration: none;
     display: none;
-
 
 }
 
@@ -100,6 +98,7 @@ nav input::placeholder {
     right: 4px;
     bottom: 3px;
     cursor: pointer;
+   
 
 }
 
@@ -163,7 +162,25 @@ nav input::placeholder {
     top: 70px;
     z-index: 1;
     left: 180px;
+    max-height: 50%;
+    overflow-y: auto;
 }
+
+#search-result::-webkit-scrollbar {
+  width: 8px;
+}
+
+#search-result::-webkit-scrollbar-track {
+    
+    background-color: transparent; /* Background of the scrollbar track */
+}
+
+#search-result::-webkit-scrollbar-thumb {
+    background: rgba(56, 53, 53, 0.5); /* Color of the scrollbar thumb */
+    border-radius: 15px; /* Rounded corners for the scrollbar thumb */;
+;
+}
+
 
 /* #date{
 
@@ -174,6 +191,7 @@ nav input::placeholder {
     border-radius: 10px;
     text-wrap: wrap;
     font-family: 'Times New Roman', Times, serif;
+    
     
 }
 
@@ -213,6 +231,20 @@ nav input::placeholder {
 
 }
 
+#error{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+}
+
+#error ul{
+    margin-top: 10px;
+    max-height: 100%;
+    
+}
 
 #background-img {
     background-image: url("/travel-Recommendation-App/Images/nyc.png");
@@ -295,3 +327,5 @@ nav input::placeholder {
     left: 10px;
     cursor: pointer;
 }
+
+
