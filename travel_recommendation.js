@@ -1,63 +1,8 @@
-const menu = document.getElementById('menu-icon');
-const closeIcon = document.getElementById('close-icon');
-
-const nav = document.getElementsByClassName('nav')[0];
-const navChildren = nav.children;
-const anchor = document.querySelectorAll('a');
-
-const intro = document.getElementsByClassName('Introduction');
-const backgroundImg = document.getElementById('background-img');
-
-const searchResult = document.getElementById('search-result');
 const searchDiv = document.getElementsByClassName('search-clear')[0]; //a collection of elements are returned so
 // you need to access the first element in that collection before accessing its children.
 const searchBtn =  searchDiv.children[0]; //acess the first button
 const clearBtn =  searchDiv.children[1]; //acess the second button
 
-
-menu.addEventListener('click', function() {
-    menu.style.display = 'none';
-    closeIcon.style.display = 'block';
-    for(let i = 0; i < intro.length; i++){
-        intro[i].style.display = 'none'
-    }
-    for(let i = 0; i < navChildren.length; i++){
-        if(i <= 1 || i == 5){
-            navChildren[i].style.display = 'none'
-      }
-    }
-    backgroundImg.style.setProperty('--before-background', 'none');
-    //Toggle switches between adding and removing a class
-    nav.classList.toggle('nav');  //nav is already defined on the css so we remove it and add nav2
-    nav.classList.toggle('nav2');
-    closeIcon.classList.add('active');
-    anchor.forEach(a => a.classList.add('active')); // Add 'active' class to all anchor tags
-    //classlist only works on individual elements
-    searchResult.style.display = 'none';
-    
-    
-});
-
-closeIcon.addEventListener('click', function() {
-    closeIcon.style.display = 'none';
-    menu.style.display = 'block';
-    for(let i = 0; i < intro.length; i++){
-        intro[i].style.display = 'block'
-    }
-    for(let i = 0; i < navChildren.length; i++){
-        if(i <= 1 || i == 5){
-            navChildren[i].style.display = 'block'
-        }    
-      }
-
-    backgroundImg.style.setProperty('--before-background', 'linear-gradient(to right, rgba(2, 112, 129, 0.7), rgba(2, 112, 129, 0))');
-    nav.classList.toggle('nav2');  //we removed nav2 and go back to our original styles
-    nav.classList.toggle('nav');
-    closeIcon.classList.remove('active');
-    anchor.forEach(a => a.classList.remove('active')); // Remove 'active' class from all anchor tags
-    searchResult.style.display = "block";
-    
-});
 const result = document.getElementById('search-result');
 
 const timeZones = {
@@ -142,6 +87,7 @@ function getCountries(data, userInput, result){
          // Ensure the element is added to the DOM before calling getDate
          setTimeout(() => getDate(city.name, dateDivId), 0);
         //  Executes the function, after waiting the specified number of milliseconds.
+        //executes as soon as the browser updates 
       });
     }
     // console.log(countries);

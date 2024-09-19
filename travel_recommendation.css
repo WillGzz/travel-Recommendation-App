@@ -2,29 +2,26 @@
 html,
 body {
     height: 100%;
-    
+    color: rgb(255, 255, 255);
+  }
 
-}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    position: relative;
+    z-index: 3;
 }
 
-body {
-    color: rgb(255, 255, 255);
-
-
-}
 
 .nav {
+
     background-color: rgb(33, 26, 26);
-    padding: 10px;
+    padding: 8px;
     display: flex;
     align-items: center;
-    position: relative;
-
+    
     /*  specifies a transition effect with a slow start and end */
 }
 
@@ -33,8 +30,6 @@ body {
     background-color: rgb(22, 126, 142);
     height: 100%;
     transition: all 0.7s ease-in-out;
-
-
 }
 
 nav #icon {
@@ -57,7 +52,7 @@ nav a {
 }
 
 nav a.active {
-    position: relative;
+   
     font-size: 1.1rem;
     top: 100px;
     display: block;
@@ -76,12 +71,16 @@ nav a:hover {
 
 
 nav input {
+  
+    left: 18px;
     background-color: white;
     padding: 10px;
     width: 156px;
     border-radius: 20px;
-    margin-left: 30px;
-    height: 25px
+    margin-left: auto;
+    height: 25px   
+    
+
 }
 
 nav input::placeholder {  
@@ -90,15 +89,14 @@ nav input::placeholder {
 
 }
 /* style the placeholder attribute */
-
 #menu-icon {
-    position: relative;
+    
     height: 23px;
     width: auto;
     right: 4px;
     bottom: 3px;
     cursor: pointer;
-   
+    margin-left: auto;
 
 }
 
@@ -110,7 +108,7 @@ nav input::placeholder {
 }
 
 #close-icon.active {
-    position: relative;
+  
     height: 28px;
     width: auto;
     float: inline-end;
@@ -124,14 +122,13 @@ nav input::placeholder {
 #search-icon {
     height: 15px;
     width: auto;
-    position: relative;
-    right: 22px;
+    right: 4px;
     bottom: 2px;
+
 }
 
 .search-clear button {
     font-size: 10px;
-    position: relative;
     left: 21px;
     color: white;
     background-color: rgb(2, 112, 129);
@@ -142,7 +139,6 @@ nav input::placeholder {
 }
 
 .search-clear {
-    position: relative;
     float: inline-end;
     margin-right: 25px;
     background-color: rgb(33, 26, 26);
@@ -159,8 +155,8 @@ nav input::placeholder {
     width: 180px;
     color: black;
     top: 70px;
-    z-index: 1;
     left: 180px;
+    z-index: 4;
 }
 
 #search-result::-webkit-scrollbar {
@@ -194,7 +190,7 @@ nav input::placeholder {
 }
 
 #result {
-    position: relative;
+    
     background-color: white;
     border-radius: 10px;
     text-wrap: wrap;
@@ -249,45 +245,39 @@ nav input::placeholder {
 #error ul{
     margin-top: 10px;
     max-height: 100%;
-    
 }
 
 #background-img {
     background-image: url("/travel-Recommendation-App/Images/nyc.png");
-    position: relative;
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    height: 180vh;
     /* Use viewport height */
-
+     z-index: 1;
 }
 
 #background-img::before {
     content: '';
     position: absolute;  /* Absolute positioned elements are removed from the normal flow */
-    top: 45px;
-    left: 0;
     width: 100%;
-    height: 95%;
+    height: 100%;
     background: var(--before-background, linear-gradient(to right, rgba(2, 112, 129, 0.7), rgba(2, 112, 129, 0)));
     /*  using custom properties (CSS variables)  */
-
+    z-index: 2;
 }
+
 
 .Introduction {
-    position: relative;
     margin-top: 50px;
-  
-
 }
 
-.Introduction img {
-    position: relative;
+.Introduction img, .about-page img{
     height: 180px;
     width: 30px;
     display: block;
+
 }
 
 .Introduction h1 {
@@ -314,24 +304,94 @@ nav input::placeholder {
 .Introduction h1,
 .Introduction p,
 .Introduction button {
-    position: relative;
+ 
     margin-left: 50px;
     margin-bottom: 55px;
     bottom: 80px;
 }
 
+/* #icons{
+    position:fixed;
+  
+    left: 10px;
+
+   
+} */
+
 #X,
 #Instagram,
 #facebook,
 #Youtube {
-    position: relative;
+  
     display: block;
     height: 38px;
     width: 21px;
     margin-top: 10px;
-    bottom: 340px;
-    left: 10px;
     cursor: pointer;
+    left: 10px;
 }
 
+.about-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
 
+}
+
+.about-page h1{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.about-us-container{
+
+    background-color: rgba(19, 18, 18, 0.4);
+    width: 90%;
+    padding: 15px;
+}
+
+.about-us-container p{
+    margin-top: 15px;
+    font-family:'Times New Roman', Times, serif 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', 'sans-serif';
+    bottom: 10px;
+}
+
+.team-container{
+    background-color: rgba(19, 18, 18, 0.4);
+    width: 90%;
+    margin-bottom: 20px;
+    padding: 15px;
+
+}
+
+.team-container h4, .team-container p{
+    text-align: left;
+    margin-top: 2px;
+}
+
+.team-container p{
+   color:rgba(176, 174, 174, 1);
+}
+
+.team-container button{
+    margin-top: 10px;
+    background-color: rgb(29, 95, 237);
+    padding: 2px 30px;
+    font-size: 0.7rem;
+    cursor: pointer;
+    color: white;
+    border-radius: 5px;
+    box-shadow: none;
+    font-weight: 600;
+    border-color: rgba(19, 85, 160, 0.493)
+   
+}
+
+#company-history{
+    background-color: rgba(19, 18, 18, 0.4);
+    width: 90%;
+    margin-bottom: 20px;
+    padding: 15px;
+}
