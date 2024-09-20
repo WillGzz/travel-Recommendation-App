@@ -363,16 +363,24 @@ nav input::placeholder {
     width: 90%;
     margin-bottom: 20px;
     padding: 15px;
-
 }
 
-.team-container h4, .team-container p{
+.team-container h4{
+    margin-bottom: 5px;
+}
+ .team-container p{
+
     text-align: left;
     margin-top: 2px;
+    color:rgba(176, 174, 174, 1);
 }
 
-.team-container p{
-   color:rgba(176, 174, 174, 1);
+.team-container img{
+    height: 35px;
+    width: 35px;
+    padding: 5px 5px; 
+    background-color: rgb(4, 51, 104);
+    margin-bottom: 7px;
 }
 
 .team-container button{
@@ -394,4 +402,15 @@ nav input::placeholder {
     width: 90%;
     margin-bottom: 20px;
     padding: 15px;
+}
+
+#company-history  .project {
+ margin-top: 12px;
+
+}
+
+#company-history img{
+
+    margin-bottom: 18px;
+    width: 100%;
 }
