@@ -1,7 +1,8 @@
+
 /* Mobile First Design */
 html,
 body {
-    height: 100%;
+    height: auto;
     color: rgb(255, 255, 255);
   }
 
@@ -28,7 +29,7 @@ body {
 .nav2 {
 
     background-color: rgb(22, 126, 142);
-    height: 100%;
+    min-height: 100vh;
     transition: all 0.7s ease-in-out;
 }
 
@@ -253,7 +254,7 @@ nav input::placeholder {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 180vh;
+    min-height: 100vh;
     /* Use viewport height */
      z-index: 1;
 }
@@ -413,4 +414,72 @@ nav input::placeholder {
 
     margin-bottom: 18px;
     width: 100%;
+}
+
+.contact{
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+   
+
+}
+.contact h1{
+margin-bottom: 40px;
+
+}
+ .contact .container{
+   top: 40px;
+   width: 80%;
+   padding: 7px 10px;
+   background-color: rgba(19, 18, 18, 0.4);
+   
+} 
+
+
+.container label, .container input, .container textarea{
+    display: block;
+    margin-bottom: 10px;
+   
+}
+
+.container input{
+    height: 30px;
+}
+
+.container input, .container textarea, .container button{
+    width: 100%
+}
+
+.container input::placeholder, .container textarea::placeholder  {
+    padding-left: 10px;
+    color: rgb(143, 142, 142);
+}
+
+.container textarea::placeholder{
+    padding-top: 5px;
+}
+
+.container input, .container textarea{
+    background-color: transparent;
+     border-color: rgb(209, 198, 198);
+     border-width: 1px;
+     border-radius: 3px;
+   
+}
+
+.container textarea{
+    height: 50px;
+}
+
+.container button{
+    color: white;
+    background-color: rgb(2, 112, 129);
+    border: none;
+    padding: 5px 0px;
+    height: 19px;
+    font-size: 0.6rem ;
+    border-radius: 5px;
+
 }
