@@ -73,14 +73,18 @@ nav a:hover {
 
 nav input {
   
-    left: 18px;
+    left: 10px;
     background-color: white;
     padding: 10px;
     width: 156px;
     border-radius: 20px;
     margin-left: auto;
-    height: 25px   
-    
+    background-image: url('./Icons/search.svg');
+    background-repeat: no-repeat;
+    background-position-x: 133px;
+    background-position-y: 2px;
+    background-size: 14px auto;
+    height: 25px  
 
 }
 
@@ -120,14 +124,6 @@ nav input::placeholder {
 
 }
 
-#search-icon {
-    height: 15px;
-    width: auto;
-    right: 4px;
-    bottom: 2px;
-
-}
-
 .search-clear button {
     font-size: 10px;
     left: 21px;
@@ -160,13 +156,13 @@ nav input::placeholder {
     z-index: 4;
 }
 
+/* pseudo element to style scrollbar */
 #search-result::-webkit-scrollbar {
   width: 8px;
 }
 
 #search-result::-webkit-scrollbar-track {
-    
-    background-color: transparent; /* Background of the scrollbar track */
+  background-color: transparent; /* Background of the scrollbar track */
 }
 
 #search-result::-webkit-scrollbar-thumb {
@@ -175,8 +171,8 @@ nav input::placeholder {
 
 }
 
-
 .date{
+    
     display: flex;
     height: 30px;
     background-color: rgb(2, 112, 129);
@@ -259,7 +255,14 @@ nav input::placeholder {
      z-index: 1;
 }
 
-#background-img::before {
+#about-background-img{
+    background-image: url("/travel-Recommendation-App/Images/nyc.png");
+    background-repeat: repeat-y;
+    background-size: 100% 50%; /* Adjust the size of the background image, width and height */
+    z-index: 1;          
+}
+
+#background-img::before, #about-background-img::before {
     content: '';
     position: absolute;  /* Absolute positioned elements are removed from the normal flow */
     width: 100%;
@@ -274,10 +277,12 @@ nav input::placeholder {
     margin-top: 50px;
 }
 
-.Introduction img, .about-page img{
+.Introduction img, .about-page img, .contact img{
+    /* position: fixed; */
     height: 180px;
     width: 30px;
     display: block;
+    bottom: 10px;
 
 }
 
@@ -290,6 +295,7 @@ nav input::placeholder {
     font-size: 0.8rem;
     width: 60%;
     font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', 'sans-serif';
+   
 }
 
 .Introduction button {
@@ -311,13 +317,17 @@ nav input::placeholder {
     bottom: 80px;
 }
 
-/* #icons{
-    position:fixed;
-  
-    left: 10px;
-
-   
-} */
+#icons{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 180px;
+    width: 30px;
+    align-items: center;
+    justify-content: center;
+    left: 6px;
+    
+} 
 
 #X,
 #Instagram,
@@ -329,7 +339,7 @@ nav input::placeholder {
     width: 21px;
     margin-top: 10px;
     cursor: pointer;
-    left: 10px;
+    
 }
 
 .about-page{
@@ -446,6 +456,7 @@ margin-bottom: 40px;
 
 .container input{
     height: 30px;
+    color: white;
 }
 
 .container input, .container textarea, .container button{
