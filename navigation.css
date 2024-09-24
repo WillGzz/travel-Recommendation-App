@@ -1,0 +1,11 @@
+/* Navigation for about and contact page only */
+
+@media (min-width: 0px) {
+  
+    nav input {
+    
+        visibility: hidden;
+    
+    }    
+
+}

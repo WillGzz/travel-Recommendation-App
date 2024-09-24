@@ -23,6 +23,7 @@ body {
     display: flex;
     align-items: center;
     
+    
     /*  specifies a transition effect with a slow start and end */
 }
 
@@ -42,6 +43,7 @@ nav #icon {
 nav h1 {
     font-size: 1.1rem;
     margin-left: 0.3em;
+   
 }
 
 
@@ -101,7 +103,8 @@ nav input::placeholder {
     right: 4px;
     bottom: 3px;
     cursor: pointer;
-    margin-left: auto;
+    margin-left: 22px;
+    
 
 }
 
@@ -152,7 +155,8 @@ nav input::placeholder {
     width: 180px;
     color: black;
     top: 70px;
-    left: 180px;
+    right: 0;   /* Stay on the right side of  its containing block/parent element */
+    margin-right: 13px;
     z-index: 4;
 }
 
@@ -274,9 +278,7 @@ nav input::placeholder {
 
 
 .Introduction {
-    margin-top: 250px;
-
-    
+    top: 250px;
 }
 
 
@@ -308,17 +310,22 @@ nav input::placeholder {
  
     margin-left: 50px;
     margin-bottom: 55px;
-    bottom: 90px;
+    bottom: 105px;
 }
 
 .icons{
     position: absolute;
     display: flex;
     flex-direction: column;
-    bottom: 180px;
+    top: 30px;
     width: 45px;
+    z-index: 4;
 } 
 
+.icons img{
+ margin-bottom: 25px;
+
+}
 .icons img, #about-us-icons img, #contact-page-icons img {
     height: 180px;
     width: 30px;
@@ -367,13 +374,12 @@ nav input::placeholder {
 }
 
 #about-us-icons{
-  
+  position: absolute;
   width: 30px;
-  float: left;
+  left: 0;
   z-index: 4;
-  margin-right: auto;
   right: 50px;
-  bottom: 235px;
+  top: 395px;
  
 }
 
@@ -524,4 +530,75 @@ margin-bottom: 40px;
 
 #contact-page-icons img{
     margin-bottom: 20px;
+}
+
+/* Desktop Design */
+
+@media only screen and (min-width: 599px) {
+
+nav a{
+  display: inline-block;
+  color: white;
+  margin-left: 10px;
+  font-size: 0.9rem;
+  left: 15px;
+  font-weight:550;
+}
+
+nav input{
+ 
+  border-radius: 15px;
+  left: 29px;
+  margin-left: 0px;
+  padding: 13px 10px;
+  width: 226px;
+  background-position-x: 130px;
+  background-position-y: 5px;
+  margin-left: auto;
+
+}
+
+#menu-icon{
+   display: none !important;
+}
+.Introduction{
+    top: 220px;
+}
+
+.Introduction h1 {
+ font-size: 2.4rem;
+    
+}
+
+.Introduction p{
+    font-size: 0.9rem;
+    width: 45%;
+}
+
+#search-result{
+    margin-right: 14px;
+    width: 195px;
+}
+
+.search-clear{
+    top: 6px;
+    display: inline-flex;
+    background-color: initial; 
+    height: 0px;
+    width: 0px;
+    right: 53px;
+    
+}
+
+.search-clear button{
+   border-radius: 4px; 
+    padding: 1px 5px;
+    margin-left: 5px;
+    left: 0px;
+    height: 20px;
+    bottom: 16px;
+    font-size: 0.5rem;
+    vertical-align:text-top;
+}
+
 }
