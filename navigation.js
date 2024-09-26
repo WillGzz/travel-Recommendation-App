@@ -34,8 +34,8 @@ menu.addEventListener('click', function() {
         pageBodyChildren[i].style.display = 'none';
     }
        
-    for(let i = 0; i < navChildren.length; i++){
-        if(i <= 1 || i == 5){
+    for(let i = 0; i < navChildren.length; i++){  // The loop will only consider the direct children of <nav>, h1 is a child of i so  
+        if(i <= 1 || i == 3){                           //it wquld be hidden becasuse the i is hidden, i is index 1
             navChildren[i].style.display = 'none';
       }
     }
@@ -63,7 +63,7 @@ closeIcon.addEventListener('click', function() {
         pageBodyChildren[i].style.display = originalStyles[i].display;
     }
     for(let i = 0; i < navChildren.length; i++){
-        if(i <= 1 || i == 5){
+        if(i <= 1 || i == 3){
             navChildren[i].style.display = 'block'
         }    
       }

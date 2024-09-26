@@ -2,10 +2,29 @@
 
 @media (min-width: 0px) {
   
+    #menu-icon{
+        margin-left: auto;
+    }
+
     nav input {
     
-        visibility: hidden;
+        display: none;
     
     }    
+
+}
+
+@media (min-width: 599px) {
+   nav h1{
+    font-size: 1.2rem;
+   }
+
+    nav a{
+        font-size: 0.92rem; 
+    }
+    #anchor-container{
+        margin-right: 20px;
+
+     }
 
 }
