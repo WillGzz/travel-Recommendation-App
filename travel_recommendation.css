@@ -356,7 +356,7 @@ nav input::placeholder {
 
 }
 
-.about-page h1{
+.about-page #about-us-h1, .about-page #our-team-h1{
     margin-top: 30px;
     margin-bottom: 30px;
     font-size: 1.6rem;
@@ -401,6 +401,10 @@ nav input::placeholder {
 .team-container h4{
     margin-bottom: 5px;
 }
+#team-container-1 p{
+    width: 90%;
+}
+
  .team-container p{
 
     text-align: left;
@@ -438,14 +442,19 @@ nav input::placeholder {
     padding: 15px;
 }
 
+#company-history h1{
+    margin-bottom: 20px;
+
+}
+
 #company-history p{
+margin-bottom: 15px;
  font-size: 0.9rem;
+ text-align:justify;
+ 
 
 }
-#company-history  .project {
- margin-top: 12px;
 
-}
 
 #company-history img{
 
@@ -617,14 +626,21 @@ nav input{
 
 .about-page {
  justify-content: initial;
- overflow-x: hidden;
+ 
+ /* overflow-x: hidden; */
 }
-  
+#about-us-icons{
+    top: 340px;
+}
 
-.about-page h1{
+  
+.about-page #about-us-h1, .about-page #our-team-h1 {
+   
     font-size: 1.8rem;
-    left: 58px;
     margin-right: auto;
+    left: 45px;
+    
+    
 }
 /* Causes overflow */
 
@@ -638,9 +654,10 @@ nav input{
  .team{
     
     margin-top: 60px;
-    margin-bottom: 50px;
+    margin-bottom: 90px;
     display: flex;
     margin-left: 20px;
+    bottom: 90px;
     
     
     
@@ -667,7 +684,7 @@ nav input{
     padding-right: 7px;
     padding-left: 10px;
     padding-bottom: 5px;
-    bottom: 90px;
+    bottom: 0px;
    
     
 }
@@ -675,8 +692,7 @@ nav input{
 .team-container img{
     height: 25px;
     width: auto;
-   
-    
+
 }
 
 .team-container h4{
@@ -703,9 +719,41 @@ nav input{
     
 
 }
-
 .team-container h4, .team-container p, .team-container button{
    margin-left: 30px;
    bottom: 20px;
+
 } 
+
+#company-history{
+    top: 60px;
+    width: 85%; 
+    left: 10px;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 0px;
+}
+
+#company-history h1{
+    margin-top: 0px;
+    margin-bottom: 15px;
+   text-align: left;
+   
+}
+#company-history p{
+    margin-bottom: 15px;
+}
+#company-history img{
+  width: 48%;
+  margin-right: 15px;
+ 
+}
+#image-container{
+    display: flex;
+}
+
+.contact{
+
+}
 }
