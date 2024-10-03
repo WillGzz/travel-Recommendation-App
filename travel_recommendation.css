@@ -481,10 +481,8 @@ margin-bottom: 40px;
    width: 80%;
    padding: 7px 10px;
    background-color: rgba(19, 18, 18, 0.4);
-   
-   
-} 
 
+} 
 
 .container label, .container input, .container textarea{
     display: block;
@@ -537,13 +535,17 @@ margin-bottom: 40px;
 #contact-page-icons{
     display: flex;
     flex-direction: column;
-    bottom: 283px;
+    bottom: 353px;
     width: 40px;
 }
 
 #contact-page-icons img{
     margin-bottom: 20px;
 }
+
+.contact #contact-heading, .contact .container{
+    left: 8px;
+  }
 
 /* Desktop Design */
 
@@ -649,8 +651,6 @@ nav input{
    left: 50px;
    width: 80%;
 }
-
-
  .team{
     
     margin-top: 60px;
@@ -658,9 +658,6 @@ nav input{
     display: flex;
     margin-left: 20px;
     bottom: 90px;
-    
-    
-    
 }
  
 .team h1{
@@ -754,6 +751,34 @@ nav input{
 }
 
 .contact{
+flex-direction: row;
+top: 80px;
+margin-left: 40px;
 
+}
+
+.contact #contact-heading{
+    height: 100%;
+    top: 70px;
+    margin-right: 50px;
+}
+
+.contact .container{
+ 
+    top: 0px;
+    width: 49%;
+ 
+ } 
+ #contact-page-icons{
+  bottom: 283px;
+  
+ } 
+ .contact #contact-heading, .contact .container{
+      left: 0px;
+      margin-left: auto;
+}
+
+.contact .container{
+     margin-right: 10px;
 }
 }
