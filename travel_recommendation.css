@@ -660,13 +660,7 @@ nav input{
     bottom: 90px;
 }
  
-.team h1{
-   
-    width: 230px;
-    bottom: 150px;
-    height: 30px;
-    
-}
+
 
 .team-container{
 
@@ -780,7 +774,10 @@ margin-left: 40px;
 
 .contact .container{
      margin-right: 10px;
+
 }
+
+
 }
 
 @media only screen and (min-width: 768px) {
@@ -803,15 +800,141 @@ margin-left: 40px;
     width: 215px;
     }
 
+    .about-page {
+        margin-top: 20px;
+    }
+    .about-page #about-us-h1{
+     left: 60px;
+    }
+    .about-page #our-team-h1{
+        top: 105px;
+        width: 70px;
+        font-size: 1.9rem;
+        left: 55px;
+    }
+
+    .about-us-container{
+        left: 120px;
+    }
+
+    
+    .team{
+        left: 55px;
+    }
+    
+    #about-us-icons{
+        top: 32px;
+        
+    }
+
+    #about-us-icons img{
+       margin-bottom: 103px;
+    }
+
+    #company-history{
+        top: 0px;
+    }
+
+    .contact .container{
+     margin-right: 20px;
+    
+
+    }
+    .contact h1{
+       font-size: 2.1rem;
+        
+    }
+
+    .container textarea{
+        height: 100px;
+      }
+
+      #contact-page-icons{
+        bottom: 338px;
+        
+       } 
+
+       #contact-page-icons img{
+        margin-bottom: 30px;
+       }
+
+  
 }
 
 /* Desktop  Design */
 @media only screen and (min-width: 1024px) {
 
+    nav input{
+        padding: 15px 10px;
+        background-position-x: 225px;
+        background-position-y: 6px;
+        background-size: 15px auto;
+        width: 326px;
+    }
+    nav input::placeholder {  
+        
+        font-size: 11px;
+    
+    }
+    .Introduction{
+       
+        left: 30px;
+        max-width: 70%;
+    }
+    
+    .Introduction h1 {
+        font-size: 2.7rem;       
+       }
+    .Introduction p{
+        width: 35%;
+    }
 
-}
+    .icons{
+     left: 10px;
+    }
 
-@media only screen and (min-width: 1200px) {
+    .icons img{
+        margin-bottom: 50px;
+    }
 
+    #search-result{
+        width: 330px;
+        margin-right: 40px;
+    }
+    #result img{
+        height: auto;
+        object-fit: cover;
+    }
+    .date{
+        font-size: 0.8rem;
+    }
 
+    .about-page #about-us-h1{
+        font-size: 2.8rem;
+        left: 120px;
+       }
+  
+    #about-us-icons img{
+        margin-bottom: 73px;
+     }
+
+    .about-page #our-team-h1{
+    top: 60px;
+      font-size: 2.3rem;
+      left: 150px;
+    }
+
+    .team{
+        margin-top: 0px;
+    }
+
+    .team-container{
+        margin-right: 25px;
+    }
+
+    .contact h1{
+        font-size: 2.6rem;
+         
+     }
+  
 }
