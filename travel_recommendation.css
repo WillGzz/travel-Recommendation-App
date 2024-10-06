@@ -547,7 +547,7 @@ margin-bottom: 40px;
     left: 8px;
   }
 
-/* Desktop Design */
+/* Tablet Design */
 
 @media only screen and (min-width: 599px) {
 
@@ -781,4 +781,37 @@ margin-left: 40px;
 .contact .container{
      margin-right: 10px;
 }
+}
+
+@media only screen and (min-width: 768px) {
+ 
+    .nav h1 {
+        font-size: 1.3rem;
+    }
+
+    .nav a {
+    
+        font-size: 1.1rem;
+    }
+
+    .Introduction p{
+        width: 44%;
+    }
+
+
+    #search-result{
+    width: 215px;
+    }
+
+}
+
+/* Desktop  Design */
+@media only screen and (min-width: 1024px) {
+
+
+}
+
+@media only screen and (min-width: 1200px) {
+
+
 }
