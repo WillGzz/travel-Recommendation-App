@@ -190,8 +190,6 @@ function getDate(location, dateDivId) {
 }
 
 
-document.getElementById('input').focus(); // Focus the input field when the page loads
-
 document.getElementById('input').addEventListener('keydown', function(event) {
   if (event.key === 'Enter') {  //for mobile search
        search();
