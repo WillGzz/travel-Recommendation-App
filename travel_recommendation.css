@@ -858,8 +858,21 @@ margin-left: 40px;
         margin-bottom: 30px;
        }
 
+  }
+
+  @media only screen and (min-width: 830px) {
+
+    .about-page #about-us-h1{
+        font-size: 2.1rem;
+        left: 120px;
+       }
   
-}
+    .about-page #our-team-h1{ 
+      left: 100px;
+      font-size: 2rem;
+    }
+
+  }
 
 /* Desktop  Design */
 @media only screen and (min-width: 1024px) {
@@ -911,7 +924,7 @@ margin-left: 40px;
 
     .about-page #about-us-h1{
         font-size: 2.8rem;
-        left: 120px;
+       
        }
   
     #about-us-icons img{
@@ -919,7 +932,7 @@ margin-left: 40px;
      }
 
     .about-page #our-team-h1{
-    top: 60px;
+      top: 60px;
       font-size: 2.3rem;
       left: 150px;
     }
@@ -936,5 +949,126 @@ margin-left: 40px;
         font-size: 2.6rem;
          
      }
+
+     .contact .container{
+        margin-right: 70px;
+        width: 40%;
+     }
   
+}
+
+@media only screen and (min-width: 1200px) {
+
+    .nav h1 {
+        font-size: 1.4rem;
+    }
+
+    .nav a {
+    
+        font-size: 1.2rem;
+    }
+
+    .Introduction h1 {
+        font-size: 2.8rem;       
+    }
+    
+    .Introduction p{
+        font-size: 0.9rem;
+        width: 30%;
+    }
+
+#about-us-icons #X, #about-us-icons #Instagram, #about-us-icons #facebook, #about-us-icons #Youtube {
+    height: 48px;
+    width: 25px;
+}
+
+#about-us-icons{
+    left: 8px;
+}
+
+.about-page #about-us-h1{
+
+    margin-bottom: 60px;
+}
+
+.about-us-container p{
+        font-size: 1.3rem;
+}
+
+
+
+.team-container{
+    height: auto;
+    max-width: 300px;
+    /* margin-right: 45px; */
+}
+
+.team-container img{
+    height: 30px;
+}
+
+.team-container h4,  .team-container p {
+ 
+    font-size: 0.8rem;
+   
+ }
+
+ .team-container h4, .team-container p, .team-container button{
+    margin-left: 40px; 
+ } 
+
+ .team-container #team-p-3{
+    width: 70%;
+ }
+
+ #contact-page-icons #X, #contact-page-icons #Instagram, #contact-page-icons #facebook, #contact-page-icons #Youtube {
+    height: 48px;
+    width: 25px;
+}
+
+#contact-page-icons{
+    left: 13px;
+}
+
+}
+@media only screen and (min-width: 1400px) {
+    .Introduction p{
+        width: 21%;
+    }
+
+    .team{
+   width: 900px;
+   left: 0px;
+   margin-right: 100px;
+}
+
+.team-container{
+    height: auto;
+    max-width: 600px;
+    margin-right: 65px;
+}
+
+.about-page #our-team-h1{
+    font-size: 2.6rem;
+}
+
+#company-history{
+    top: 30px;
+}
+
+.contact{
+left: 160px;
+  width: 80%;
+}   
+
+.contact h1{
+    font-size: 2.8rem;
+     
+ }
+
+ .contact .container{
+    margin-right: 140px;
+    width: 40%;
+    
+ }
 }
