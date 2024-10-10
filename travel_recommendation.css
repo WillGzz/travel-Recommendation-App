@@ -890,8 +890,8 @@ margin-left: 40px;
     
     }
     .Introduction{
-       
-        left: 30px;
+       /* change */
+        left: 30px;  
         max-width: 70%;
     }
     
@@ -969,7 +969,7 @@ margin-left: 40px;
     }
 
     .Introduction h1 {
-        font-size: 2.8rem;       
+        font-size: 3.8rem;       
     }
     
     .Introduction p{
@@ -977,6 +977,18 @@ margin-left: 40px;
         width: 30%;
     }
 
+    .icons{
+        left: 10px;
+       }
+   
+       .icons img{
+        height: 196px;
+        margin-bottom: 90px;
+       }
+
+       .date{
+        font-size: 0.81rem;
+    }
 #about-us-icons #X, #about-us-icons #Instagram, #about-us-icons #facebook, #about-us-icons #Youtube {
     height: 48px;
     width: 25px;
@@ -1029,13 +1041,39 @@ margin-left: 40px;
 #contact-page-icons{
     left: 13px;
 }
-
+.contact h1{
+    font-size: 3.8rem;
+     
+ }
 }
 @media only screen and (min-width: 1400px) {
+    .Introduction{
+        /* change */
+         left: 60px;  
+        
+     }
+     
+
+    .Introduction h1 {
+        font-size: 5.8rem;       
+    }
+    
     .Introduction p{
         width: 21%;
     }
+    
+    .icons img{
+        height: 260px;
+        margin-bottom: 130px;
+       }
+    #search-result{
+        width: 24%;
+        margin-right: 40px;
+    }
 
+    .date{
+        font-size: 0.93rem;
+    }
     .team{
    width: 900px;
    left: 0px;
@@ -1062,9 +1100,9 @@ left: 160px;
 }   
 
 .contact h1{
-    font-size: 2.8rem;
+    font-size: 4.5rem;
      
- }
+ } 
 
  .contact .container{
     margin-right: 140px;
